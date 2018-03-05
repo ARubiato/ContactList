@@ -8,14 +8,18 @@
 <input type="submit" value="Add a contact" (click)="addContact()">
 
 
-<!-- <ul *ngFor="let Contactlist of posts | async">
-  <li (click)="">
-  
-    Firstname: {{ContactList.data.Fname}}
-    Lastname: {{ContactList.data.Lname}}
-    Address: {{ContactList.data.address}}
-    Email: {{ContactList.data.email}}
-    Mobile: {{ContactList.data.mobile}}
-    Phone: {{ContactList.data.phone}}
-    </li>
-  </ul> -->
+<ul *ngFor="let post of clist | async">
+  <li (click)="getContact(clist.id)">
+    <strong>{{ post.data.Fname}}</strong>(<a href="#" (click)="deletePost(clist.id)">delete</a>)
+    <strong>{{ post.data.Lname}}</strong> (<a href="#" (click)="deletePost(clist.id)">delete</a>)
+    <strong>{{ post.data.address}}</strong>(<a href="#" (click)="deletePost(clist.id)">delete</a>)
+    <strong>{{ post.data.email}}</strong>(<a href="#" (click)="deletePost(clist.id)">delete</a>)
+    <strong>{{ post.data.mobile}}</strong>(<a href="#" (click)="deletePost(clist.id)">delete</a>)
+    <strong>{{ post.data.phone}}</strong>(<a href="#" (click)="deletePost(clist.id)">delete</a>)
+    <br>
+  </li>
+</ul>
+
+<h1>A specific contact: </h1>
+
+
