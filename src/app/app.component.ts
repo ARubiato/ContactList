@@ -12,19 +12,23 @@ interface ContactList {
   phone: string;
 }
 
-interface ContactListID extends ContactList { 
+interface ContactListID extends ContactList {
   id:string;
 }
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+
 })
 export class AppComponent {
   title = 'app';
   clistCol: AngularFirestoreCollection<ContactList>;
   clist: any;
+  clistDoc: AngularFirestoreDocument<ContactList>;
+  clistO: Observable<ContactList>;
   Fname: string;
   Lname: string;
   address: string;
@@ -35,10 +39,28 @@ export class AppComponent {
 
   ngOnInit() {
     this.clistCol = this.afs.collection('ContactList');
-    this.clist = this.clistCol.valueChanges();
-  }
+    this.clist = this.clistCol.snapshotChanges()
+    .map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as ContactList;
+        const id = a.payload.doc.id;
+        return { id, data };
+      });
+    });
+    }
+
     addContact() {
       this.clistCol.doc('my-custom-id').set({'Fname': this.Fname, 'Lname': this.Lname, 'address': this.address, 'email': this.email, 'mobile': this.mobile, 'phone':this.phone});
+      this.clist = this.clistCol.valueChanges();
+    }
+
+    getContact(clistId) {
+      this.clistDoc = this.afs.doc('posts/'+clistId);
+      this.clist = this.clistDoc.valueChanges();
+    }
+
+    deletePost(clistId) {
+      this.afs.doc('Contacts/'+clistId).delete();
     }
 
   }
