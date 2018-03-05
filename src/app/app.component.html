@@ -7,6 +7,11 @@
 
 </ul>
 
-<input type="text" [(ngModel)]="title" name="title" placeholder="Title..">
+<input type="text" [(ngModel)]="Fname" name="Fname" placeholder="Firstname"><br>
+<input type="text" [(ngModel)]="Lname" name="Lname" placeholder="Lastname"> <br>
+<input type="text" [(ngModel)]="address" name="address" placeholder="Address"> <br>
+<input type="text" [(ngModel)]="email" name="email" placeholder="Email"> <br>
+<input type="text" [(ngModel)]="mobile" name="mobile" placeholder="Mobile"> <br>
+<input type="text" [(ngModel)]="phone" name="phone" placeholder="Phone "> <br>
 <textarea [(ngModel)]="content" name="content" placeholder="Content.."></textarea>
 <input type="submit" value="Add a contact" (click)="addContact()">
