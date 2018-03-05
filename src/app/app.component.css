@@ -35,3 +35,17 @@ ul li a {
 h1 {
     margin-top:50px;
 }
+
+
+.left {
+float:left;
+height: 100px;
+width: 50%;
+
+}
+
+.right {
+  float:right;
+height: 100px;
+width: 40%;
+}
