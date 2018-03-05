@@ -24,7 +24,7 @@ interface ContactListID extends ContactList {
 export class AppComponent {
   title = 'app';
   clistCol: AngularFirestoreCollection<ContactList>;
-  clist: Observable<ContactList[]>;
+  clist: any;
   Fname: string;
   Lname: string;
   address: string;
