@@ -50,7 +50,7 @@ export class AppComponent {
     }
 
     addContact() {
-      this.clistCol.doc('asdf').set({'Fname': this.Fname, 'Lname': this.Lname, 'address': this.address, 'email': this.email, 'mobile': this.mobile, 'phone':this.phone});
+      this.clistCol.doc('00000').set({'Fname': this.Fname, 'Lname': this.Lname, 'address': this.address, 'email': this.email, 'mobile': this.mobile, 'phone':this.phone});
 
     }
 
@@ -59,7 +59,7 @@ export class AppComponent {
       this.clist = this.clistDoc.valueChanges();
     }
 
-    deletePost(clistId) {
+    deleteContact(clistId) {
       this.afs.doc('Contacts/'+clistId).delete();
     }
 
