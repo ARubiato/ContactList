@@ -50,8 +50,8 @@ export class AppComponent {
     }
 
     addContact() {
-      this.clistCol.doc('my-custom-id').set({'Fname': this.Fname, 'Lname': this.Lname, 'address': this.address, 'email': this.email, 'mobile': this.mobile, 'phone':this.phone});
-      this.clist = this.clistCol.valueChanges();
+      this.clistCol.doc('asdf').set({'Fname': this.Fname, 'Lname': this.Lname, 'address': this.address, 'email': this.email, 'mobile': this.mobile, 'phone':this.phone});
+
     }
 
     getContact(clistId) {
