@@ -1,11 +1,3 @@
-<ul *ngFor="let Contactlist of posts | async">
-<li>
-  <strong>{{ContactList.Fname}}</strong>
-  <br>
-  {{ContactList.Lname}}
-  </li>
-
-</ul>
 
 <input type="text" [(ngModel)]="Fname" name="Fname" placeholder="Firstname"><br>
 <input type="text" [(ngModel)]="Lname" name="Lname" placeholder="Lastname"> <br>
@@ -14,3 +6,16 @@
 <input type="text" [(ngModel)]="mobile" name="mobile" placeholder="Mobile"> <br>
 <input type="text" [(ngModel)]="phone" name="phone" placeholder="Phone "> <br>
 <input type="submit" value="Add a contact" (click)="addContact()">
+
+
+<!-- <ul *ngFor="let Contactlist of posts | async">
+  <li (click)="">
+  
+    Firstname: {{ContactList.data.Fname}}
+    Lastname: {{ContactList.data.Lname}}
+    Address: {{ContactList.data.address}}
+    Email: {{ContactList.data.email}}
+    Mobile: {{ContactList.data.mobile}}
+    Phone: {{ContactList.data.phone}}
+    </li>
+  </ul> -->

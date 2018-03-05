@@ -12,8 +12,8 @@ interface ContactList {
   phone: string;
 }
 
-interface ContactListID extends ContactList {
-  id:string
+interface ContactListID extends ContactList { 
+  id:string;
 }
 
 @Component({
