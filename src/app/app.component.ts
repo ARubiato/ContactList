@@ -4,10 +4,17 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 interface ContactList {
-
+  Fname: string;
+  Lname: string;
+  address: string;
+  email: string;
+  mobile: string;
+  phone: string;
 }
 
-
+interface ContactListID extends ContactList {
+  id:string
+}
 
 @Component({
   selector: 'app-root',
@@ -15,6 +22,7 @@ interface ContactList {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'app';
   clistCol: AngularFirestoreCollection<ContactList>;
   clist: Observable<ContactList[]>;
   Fname: string;
